@@ -18,6 +18,6 @@ server
     .get("/", pageLanding)
     .get("/study", pageStudy)
     .get("/give-classes", pageGiveClasses)
-    .post("/save-classes", saveClasses)
+    .post("/success", saveClasses)
 
     .listen(5500);

@@ -83,13 +83,13 @@ async function saveClasses(req, res) {
         queryString += "&weekday=" + req.body.weekday[0];
         queryString += "&time=" + req.body.time_from[0];
 
-        
-        return res.redirect("/study" + queryString);
+        queryString = "/study" + queryString;
+
+        return res.render("success.html", { queryString });
 
     } catch (error) {
         console.log(error);
     }
-
 
 }
 
