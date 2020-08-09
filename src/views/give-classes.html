@@ -68,7 +68,7 @@
                             <label for="subject">Matéria</label>
                             <select name="subject" id="subject" required="required">
                                 <option value="">Selecione uma opção</option>
-                                
+
                                 {% for subject in subjects %}
                                     <option value="{{loop.index}}">{{subject}}</option>
                                 {% endfor %}
@@ -90,26 +90,32 @@
                         </legend>
 
                         <div class="schedule-item">
-                            <div class="select-block">
-                                <label for="weekday">Dia da semana</label>
-                                <select name="weekday[]" required="required">
-                                    <option value="">Selecione uma opção</option>
-
-                                    {% for weekday in weekdays %}
-                                        <option value="{{loop.index0}}">{{weekday}}</option>
-                                    {% endfor %}
-
-                                </select>
+                            <div class="alert-and-close">
+                                <div class="alert">Preencha todos os campos antes de adicionar um novo horário!</div>
+                                <a class="close"><img src="/images/icons/close.svg"></a>
                             </div>
+                            <div class="content">
+                                <div class="select-block">
+                                    <label for="weekday">Dia da semana</label>
+                                    <select name="weekday[]" required="required">
+                                        <option value="">Selecione uma opção</option>
 
-                            <div class="input-block">
-                                <label for="time_from">Das</label>
-                                <input type="time" name="time_from[]" required="required">
-                            </div>
+                                        {% for weekday in weekdays %}
+                                            <option value="{{loop.index0}}">{{weekday}}</option>
+                                        {% endfor %}
 
-                            <div class="input-block">
-                                <label for="time_to">Até</label>
-                                <input type="time" name="time_to[]" required="required">
+                                    </select>
+                                </div>
+
+                                <div class="input-block">
+                                    <label for="time_from">Das</label>
+                                    <input type="time" name="time_from[]" required="required">
+                                </div>
+
+                                <div class="input-block">
+                                    <label for="time_to">Até</label>
+                                    <input type="time" name="time_to[]" required="required">
+                                </div>
                             </div>
                         </div>
                     </fieldset>
